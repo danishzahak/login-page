@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+
+  
+   <style>
+       body{
+           background-color: blue;
+           display: flex;
+           justify-content:  center;
+           align-items: center;
+           height: 100vh;
+       }
+  #form-container{
+    text-align: center;
+      background-color: white;
+      padding: 50px;
+  }
+
+
+  input{
+      width: 200px;
+      margin: 10px 0px;
+      padding: 10px;
+  }
+
+  input[type="submit"]{
+      width: 222px;
+      background-color: blue;
+      border: 0px;
+      color: white;
+      font-size: larger;
+  }
+
+  .error{
+      color: red;
+      margin: 0px;
+      text-align: left;
+  }
+
+   </style>
+</head>
+<body>
+
+  <div id="form-container">
+      <h2>Login </h2>
+      <form action="" onsubmit="return validateFrom()">
+          <input type="text" placeholder="Username" id="username"><br> <br>
+          <p id="userError" class="error"></p>
+          <input type="password" placeholder="Password" id="password" ><br><br>
+          <p id="passError" class="error"></p>
+          <input type="submit">
+      </form>
+  </div>
+  
+
+   <script>
+
+let username = document.getElementById("username");
+   let password = document.getElementById("password");
+
+
+
+    function validateFrom(){
+
+ if(username.value == ""){
+    document.getElementById("userError").innerHTML="user name error";
+   
+ }else if(username.value.length <6){
+
+    document.getElementById("userError").innerHTML="user name required min 6 char";
+    
+ } else{
+    document.getElementById("userError").innerHTML="";
+    
+ }
+
+ //iske baad password ke liye code likha gya hai
+
+ if(password.value == ""){
+  
+    document.getElementById("passError").innerHTML="password error";
+    
+ }else if(password.value.length <8){
+
+    document.getElementById("passError").innerHTML="password required min 8 char";
+    
+
+ } else{
+    document.getElementById("passError").innerHTML="";
+
+ }
+    
+    return false;
+
+    }
+
+
+   </script>
+
+
+
+
+    
+</body>
+</html>
